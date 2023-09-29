@@ -17,16 +17,16 @@ library(plotly)
 library(ggmap)
 
 
-americas = read_excel("C:/Users/HP/Downloads/HR Dashboard_v1 - Americas.xlsx")
+americas = read_excel(file.choose())
 
-apac = read_excel("C:\\Users\\HP\\Downloads\\HR Dashboard_v1 - APAC.xlsx")
+apac = read_excel(file.choose())
 
-europe = read_excel("C:\\Users\\HP\\Downloads\\HR Dashboard_v1 - Europe.xlsx")
+europe = read_excel(file.choose())
 #Consolidating global data
 global = rbind(americas,apac,europe)
 
 #Read file containing country coordinates
-country_coor = read_excel("C:\\Users\\HP\\Downloads\\country coord.xlsx")
+country_coor = read_excel(file.choose())
 
 ```
 Dash {data-icon="fa-globe"}
@@ -138,8 +138,8 @@ h5=global %>%
 p5=plot_ly(h5) %>% 
   add_pie(labels=h5$`Employment type`,values=h5$count,hole=0.6)
    p5 <- p5 %>% 
-  layout(plot_bgcolor = "black",  # set the background color of the plot
-         paper_bgcolor = "black")  # set the background color of the paper
+  layout(plot_bgcolor = "white",  # set the background color of the plot
+         paper_bgcolor = "white")  # set the background color of the paper
 
 p5
 ```
@@ -154,8 +154,8 @@ h6=global %>%
 p6=plot_ly(h6) %>% 
   add_pie(labels=h6$`Work Authorisation`,values=h6$count,hole=0.6)
   p6 <- p6 %>% 
-  layout(plot_bgcolor = "black",  # set the background color of the plot
-         paper_bgcolor = "black")  # set the background color of the paper
+  layout(plot_bgcolor = "white",  # set the background color of the plot
+         paper_bgcolor = "white")  # set the background color of the paper
 
 p6
 ```
@@ -268,8 +268,8 @@ h7=global %>%
   summarise(count=n())
 p7=plot_ly(h7) %>% 
   add_pie(labels=h7$`Employment type`,values=h7$count,hole=0.6)
- p7 <- p7 %>% layout(plot_bgcolor = "black",# set the background color of the plot
-         paper_bgcolor = "black")  # set the background color of the paper
+ p7 <- p7 %>% layout(plot_bgcolor = "white",# set the background color of the plot
+         paper_bgcolor = "white")  # set the background color of the paper
  
 p7
 ```
@@ -283,8 +283,8 @@ h8=global %>%
   summarise(count=n())
 p8=plot_ly(h8) %>% 
   add_pie(labels=h8$`Work Authorisation`,values=h8$count,hole=0.6)
- p8 <- p8 %>% layout(plot_bgcolor = "black",# set the background color of the plot
-         paper_bgcolor = "black")  # set the background color of the paper
+ p8 <- p8 %>% layout(plot_bgcolor = "white",# set the background color of the plot
+         paper_bgcolor = "white")  # set the background color of the paper
  
 
 p8
